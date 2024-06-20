@@ -1,5 +1,21 @@
 import 'firebase_analytics_service.dart';
 
+/// Class untuk mengelola analitik retensi pemasaran
+/// seperti merekam sumber pengguna @[recordUserSource],
+/// merekam tingkat retensi @[recordRetentionRate],
+/// merekam efektivitas kampanye @[recordCampaignEffectiveness],
+/// merekam tingkat keterlibatan pengguna @[recordUserEngagement],
+/// merekam ROI pemasaran @[recordMarketingROI],
+/// merekam durasi kampanye pemasaran @[recordCampaignDuration],
+/// dan merekam frekuensi kampanye pemasaran @[recordCampaignFrequency]
+/// Contoh penggunaan:
+/// recordUserSource('GoogleAds');
+/// recordRetentionRate(0.85);
+/// recordCampaignEffectiveness('WinterSale', 0.75);
+/// recordUserEngagement(0.9);
+/// recordMarketingROI('WinterSale', 1.5);
+/// recordCampaignDuration('WinterSale', 3600);
+/// recordCampaignFrequency('WinterSale', 5);
 class MarketingRetentionAnalytics {
   final analysis = FirebaseAnalyticsService();
 

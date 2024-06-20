@@ -1,5 +1,13 @@
 import 'firebase_analytics_service.dart';
 
+/// Class untuk mengelola analitik perilaku pengguna
+/// seperti merekam navigasi layar @[recordScreenNavigation],
+/// merekam aktivitas pengguna @[recordUserActivity],
+/// dan merekam interaksi pengguna @[recordUserInteraction]
+/// Contoh penggunaan:
+/// recordScreenNavigation('HomeScreen');
+/// recordUserActivity('PlayingGame', 120);
+/// recordUserInteraction('ButtonPress', 5);
 class UserBehaviorAnalytics {
   final analysis = FirebaseAnalyticsService();
 

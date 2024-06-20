@@ -1,5 +1,11 @@
 import 'firebase_analytics_service.dart';
 
+/// Class untuk mengelola analitik pengguna
+/// seperti merekam durasi penggunaan fitur @[recordFeatureDuration],
+/// dan merekam frekuensi penggunaan fitur @[recordFeatureFrequency]
+/// Contoh penggunaan:
+/// recordFeatureDuration('SearchFeature', 60);
+/// recordFeatureFrequency('SearchFeature', 10);
 class FeatureUsageAnalytics {
   final analysis = FirebaseAnalyticsService();
 

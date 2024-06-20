@@ -1,5 +1,13 @@
 import 'firebase_analytics_service.dart';
 
+/// Class untuk mengelola analitik pengguna
+/// seperti merekam informasi pengguna @[recordUserInformation],
+/// mengupdate informasi pengguna @[updateUser],
+/// dan merekam sesi pengguna @[recordUserSession]
+/// Contoh penggunaan:
+/// recordUserInformation();
+/// updateUser(email: '', userID: '', username: '');
+/// recordUserSession(3600);
 class UserAnalytics {
   final analysis = FirebaseAnalyticsService();
   
@@ -16,6 +24,9 @@ class UserAnalytics {
     this.email = defaultValue,
   });
 
+  /// Catat informasi pengguna
+  /// Contoh penggunaan:
+  /// recordUserInformation();
   void recordUserInformation() {
     analysis.logEvent(
       name: 'user_information_recorded',
@@ -27,6 +38,12 @@ class UserAnalytics {
     );
   }
 
+  /// Update informasi pengguna
+  /// [email] adalah email pengguna
+  /// [userID] adalah id pengguna
+  /// [username] adalah nama pengguna
+  /// Contoh penggunaan:
+  /// updateUser(email: '', userID: '', username: '');
   void updateUser(
       {required email, required String userID, required String username}) {
     analysis.logEvent(
@@ -41,5 +58,18 @@ class UserAnalytics {
     analysis.setUserId(id: userID);
 
     analysis.setUserProperties(name: 'username', value: username);
+  }
+
+  /// Catat sesi pengguna
+  /// [sessionDuration] adalah durasi sesi dalam detik
+  /// Contoh penggunaan:
+  /// recordUserSession(3600);
+  void recordUserSession(int sessionDuration) {
+    analysis.logEvent(
+      name: 'user_session',
+      parameters: {
+        'duration': sessionDuration,
+      },
+    );
   }
 }
