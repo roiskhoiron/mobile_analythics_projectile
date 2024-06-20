@@ -1,10 +1,12 @@
-
 import 'firebase_analytics_service.dart';
 
 class MarketingRetentionAnalytics {
   final analysis = FirebaseAnalyticsService();
 
-
+  /// Catat sumber pengguna
+  /// [userSource] adalah sumber pengguna
+  /// Contoh penggunaan:
+  /// recordUserSource('GoogleAds');
   void recordUserSource(String userSource) {
     analysis.logEvent(
       name: 'user_source',
@@ -14,6 +16,10 @@ class MarketingRetentionAnalytics {
     );
   }
 
+  /// Catat tingkat retensi
+  /// [retentionRate] adalah tingkat retensi
+  /// Contoh penggunaan:
+  /// recordRetentionRate(0.85);
   void recordRetentionRate(double retentionRate) {
     analysis.logEvent(
       name: 'retention_rate',
@@ -23,6 +29,11 @@ class MarketingRetentionAnalytics {
     );
   }
 
+  /// Catat efektivitas kampanye
+  /// [campaignName] adalah nama kampanye
+  /// [effectivenessScore] adalah skor efektivitas kampanye
+  /// Contoh penggunaan:
+  /// recordCampaignEffectiveness('WinterSale', 0.75);
   void recordCampaignEffectiveness(String campaignName, double effectivenessScore) {
     analysis.logEvent(
       name: 'campaign_effectiveness',
@@ -33,6 +44,10 @@ class MarketingRetentionAnalytics {
     );
   }
 
+  /// Catat tingkat keterlibatan pengguna
+  /// [userEngagementScore] adalah skor keterlibatan pengguna
+  /// Contoh penggunaan:
+  /// recordUserEngagement(0.9);
   void recordUserEngagement(double userEngagementScore) {
     analysis.logEvent(
       name: 'user_engagement',
@@ -42,12 +57,47 @@ class MarketingRetentionAnalytics {
     );
   }
 
+  /// Catat ROI pemasaran
+  /// [campaignName] adalah nama kampanye
+  /// [roi] adalah ROI pemasaran
+  /// Contoh penggunaan:
+  /// recordMarketingROI('WinterSale', 1.5);
   void recordMarketingROI(String campaignName, double roi) {
     analysis.logEvent(
       name: 'marketing_roi',
       parameters: {
         'campaign': campaignName,
         'roi': roi,
+      },
+    );
+  }
+
+  /// Catat durasi kampanye pemasaran
+  /// [campaignName] adalah nama kampanye
+  /// [duration] adalah durasi kampanye dalam detik
+  /// Contoh penggunaan:
+  /// recordCampaignDuration('WinterSale', 3600);
+  void recordCampaignDuration(String campaignName, int duration) {
+    analysis.logEvent(
+      name: 'campaign_duration',
+      parameters: {
+        'campaign': campaignName,
+        'duration': duration,
+      },
+    );
+  }
+
+  /// Catat frekuensi kampanye pemasaran
+  /// [campaignName] adalah nama kampanye
+  /// [frequency] adalah frekuensi kampanye
+  /// Contoh penggunaan:
+  /// recordCampaignFrequency('WinterSale', 5);
+  void recordCampaignFrequency(String campaignName, int frequency) {
+    analysis.logEvent(
+      name: 'campaign_frequency',
+      parameters: {
+        'campaign': campaignName,
+        'frequency': frequency,
       },
     );
   }
