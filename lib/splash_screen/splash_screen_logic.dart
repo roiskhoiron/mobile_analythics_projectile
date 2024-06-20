@@ -27,7 +27,8 @@ class SplashScreenLogic extends GetxController {
       var diverInfo = await DeviceInfoPlugin().iosInfo;
       AnalyticIO.platform.recordDeviceType(diverInfo.name);
       AnalyticIO.platform.recordDeviceModel(diverInfo.model);
-      AnalyticIO.platform.recordDeviceManufacture(diverInfo.systemVersion);
+      AnalyticIO.platform.recordDeviceManufacture(diverInfo.identifierForVendor ?? 'unknown');
+
     }
 
 
