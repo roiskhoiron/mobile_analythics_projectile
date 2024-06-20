@@ -36,6 +36,8 @@ Dengan memetakan analisa data berdasarkan kategori seperti ini, kamu bisa lebih 
 
 
 Capture Dokumentasi :
+![image](https://github.com/roiskhoiron/mobile_analythics_projectile/assets/28525341/23aeb8cd-c363-43fc-a6fc-92b4f3afde86)
+
 
 <img width="1158" alt="image" src="https://github.com/roiskhoiron/mobile_analythics_projectile/assets/28525341/50248d50-3955-49db-9157-4b7b0e9d7fec">
 
