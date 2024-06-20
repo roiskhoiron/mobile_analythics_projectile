@@ -87,3 +87,6 @@ Dengan memetakan analisa data berdasarkan kategori seperti ini, Anda bisa lebih 
 <img width="1170" alt="image" src="https://github.com/roiskhoiron/mobile_analythics_projectile/assets/28525341/6762592b-0ac3-4f0c-b6e0-a864b3930398">
 
 
+### next challenge follow this link:
+bigquery : https://cloud.google.com/blog/products/management-tools/using-bigquery-and-firebase-analytics-to-understand-your-mobile-app
+
