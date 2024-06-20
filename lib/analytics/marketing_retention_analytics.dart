@@ -1,13 +1,11 @@
-import 'application_performance_analytics.dart';
+
 import 'firebase_analytics_service.dart';
 
 class MarketingRetentionAnalytics {
   final analysis = FirebaseAnalyticsService();
 
 
-
   void recordUserSource(String userSource) {
-    // Record user source
     analysis.logEvent(
       name: 'user_source',
       parameters: {
@@ -17,11 +15,39 @@ class MarketingRetentionAnalytics {
   }
 
   void recordRetentionRate(double retentionRate) {
-    // Record retention rate
     analysis.logEvent(
       name: 'retention_rate',
       parameters: {
         'rate': retentionRate,
+      },
+    );
+  }
+
+  void recordCampaignEffectiveness(String campaignName, double effectivenessScore) {
+    analysis.logEvent(
+      name: 'campaign_effectiveness',
+      parameters: {
+        'campaign': campaignName,
+        'effectiveness': effectivenessScore,
+      },
+    );
+  }
+
+  void recordUserEngagement(double userEngagementScore) {
+    analysis.logEvent(
+      name: 'user_engagement',
+      parameters: {
+        'engagement': userEngagementScore,
+      },
+    );
+  }
+
+  void recordMarketingROI(String campaignName, double roi) {
+    analysis.logEvent(
+      name: 'marketing_roi',
+      parameters: {
+        'campaign': campaignName,
+        'roi': roi,
       },
     );
   }
