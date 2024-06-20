@@ -4,30 +4,79 @@ Analyst monitor : https://analytics.google.com/analytics/web/?authuser=0&hl=en#/
 
 Proyek ini mencakup berbagai kelas analitik yang dirancang untuk melacak dan menganalisis berbagai aspek performa dan penggunaan aplikasi. Berikut adalah ringkasan singkat dari masing-masing kelas:
 
-1. **ApplicationPerformanceAnalytics**: Digunakan untuk menganalisis kinerja aplikasi, termasuk waktu respon, crash rate, dan berbagai metrik kinerja lainnya.
+1. **ApplicationPerformanceAnalytics** | Digunakan untuk menganalisis kinerja aplikasi, termasuk waktu respon, crash rate, dan berbagai metrik kinerja lainnya.
+```dart
+// Contoh penggunaan
+ApplicationPerformanceAnalytics apa = ApplicationPerformanceAnalytics();
+apa.recordResponseTime('/api/v1/users', 200, true);
+apa.recordApplicationError('NullPointerError');
+apa.recordPerformance(name: 'loadTime', datas: {'time': 200});
+```
+2. **ConversionAnalytics** | Digunakan untuk melacak konversi, seperti pembelian dalam aplikasi, pendaftaran, atau tindakan lainnya yang mengindikasikan keberhasilan tujuan tertentu.
+```dart
+// Contoh penggunaan
+ConversionAnalytics ca = ConversionAnalytics();
+ca.recordConversionEvent('Purchase', 1);
+ca.recordConversionRate(0.5);
+```
+3. **CustomEventAnalytics** | Memungkinkan pelacakan peristiwa khusus yang tidak termasuk dalam peristiwa standar. Anda bisa mendefinisikan dan menganalisis peristiwa sesuai kebutuhan spesifik aplikasi.
+```dart
+// Contoh penggunaan
+TrendAnalysisAnalytics taa = TrendAnalysisAnalytics();
+taa.recordTrendEvent('UserRegistration', 1);
+taa.recordTrendChange('UserRegistration', 0.5);
+```
+4. **FeatureUsageAnalytics** | Digunakan untuk menganalisis penggunaan fitur tertentu dalam aplikasi, membantu memahami fitur mana yang paling sering digunakan dan bagaimana pengguna berinteraksi dengan mereka.
+```dart
+// Contoh penggunaan
 
-2. **ConversionAnalytics**: Digunakan untuk melacak konversi, seperti pembelian dalam aplikasi, pendaftaran, atau tindakan lainnya yang mengindikasikan keberhasilan tujuan tertentu.
-
-3. **CustomEventAnalytics**: Memungkinkan pelacakan peristiwa khusus yang tidak termasuk dalam peristiwa standar. Anda bisa mendefinisikan dan menganalisis peristiwa sesuai kebutuhan spesifik aplikasi.
-
-4. **FeatureUsageAnalytics**: Digunakan untuk menganalisis penggunaan fitur tertentu dalam aplikasi, membantu memahami fitur mana yang paling sering digunakan dan bagaimana pengguna berinteraksi dengan mereka.
-
-5. **FirebaseAnalytics**: Berisi integrasi dan konfigurasi dasar dengan Firebase Analytics untuk pelacakan peristiwa umum dan pengguna.
-
-6. **MarketingRetentionAnalytics**: Fokus pada analisis retensi pengguna dan efektivitas kampanye pemasaran. Ini bisa mencakup pelacakan churn rate dan engagement pengguna.
-
-7. **PlatformAnalytics**: Digunakan untuk menganalisis performa aplikasi di berbagai platform (misalnya iOS vs Android), termasuk perbedaan dalam penggunaan atau kinerja.
-
-8. **TrendAnalysisAnalytics**: Berfungsi untuk menganalisis tren data dari waktu ke waktu, membantu mengidentifikasi pola atau perubahan signifikan dalam perilaku pengguna.
-
-9. **UserAnalytics**: Mengelola dan menganalisis data pengguna secara umum, termasuk demografi, kebiasaan penggunaan, dan metrik lainnya yang terkait dengan basis pengguna.
-
-10. **UserBehaviorAnalytics**: Fokus pada analisis perilaku pengguna, seperti alur penggunaan, preferensi, dan interaksi dalam aplikasi.
-
+```
+5. **MarketingRetentionAnalytics** | Fokus pada analisis retensi pengguna dan efektivitas kampanye pemasaran. Ini bisa mencakup pelacakan churn rate dan engagement pengguna.
+```dart
+// Contoh penggunaan
+MarketingRetentionAnalytics mra = MarketingRetentionAnalytics();
+mra.recordUserEngagement(0.8);
+mra.recordMarketingROI('WinterSale', 1.5);
+mra.recordCampaignDuration('WinterSale', 3600);
+mra.recordCampaignFrequency('WinterSale', 5);
+```
+6. **PlatformAnalytics** | Digunakan untuk menganalisis performa aplikasi di berbagai platform (misalnya iOS vs Android), termasuk perbedaan dalam penggunaan atau kinerja.
+```dart
+// Contoh penggunaan
+PlatformAnalytics pa = PlatformAnalytics();
+pa.recordAppVersion('1.0.0');
+pa.recordDeviceType('mobile');
+pa.recordDeviceModel('Samsung Galaxy S21');
+pa.recordDeviceManufacture('Samsung');
+```
+7. **TrendAnalysisAnalytics** | Berfungsi untuk menganalisis tren data dari waktu ke waktu, membantu mengidentifikasi pola atau perubahan signifikan dalam perilaku pengguna.
+```dart
+// Contoh penggunaan
+TrendAnalysisAnalytics taa = TrendAnalysisAnalytics();
+taa.recordTrendEvent('UserRegistration', 1);
+taa.recordTrendChange('UserRegistration', 0.5);
+```
+8. **UserAnalytics** | Mengelola dan menganalisis data pengguna secara umum, termasuk demografi, kebiasaan penggunaan, dan metrik lainnya yang terkait dengan basis pengguna.
+```dart
+// Contoh penggunaan
+UserAnalytics ua = UserAnalytics(userID: '123', username: 'JohnDoe', email: 'johndoe@example.com');
+ua.recordUserInformation();
+ua.updateUser(email: 'johndoe@example.com', userID: '123', username: 'JohnDoe');
+ua.recordUserActivity('Login', 1);
+ua.recordUserSession(3600);
+```
+9. **UserBehaviorAnalytics** | Fokus pada analisis perilaku pengguna, seperti alur penggunaan, preferensi, dan interaksi dalam aplikasi.
+```dart
+// Contoh penggunaan
+UserBehaviorAnalytics uba = UserBehaviorAnalytics();
+uba.recordUserBehavior('Login', 1);
+uba.recordUserPreference('DarkMode', true);
+```
 Dengan memetakan analisa data berdasarkan kategori seperti ini, Anda bisa lebih mudah mengelola dan memahami data yang dikumpulkan, serta membuat keputusan berdasarkan analisis yang lebih terstruktur dan mendalam. Pastikan setiap file memiliki fungsi yang jelas dan terintegrasi dengan baik satu sama lain untuk mendapatkan gambaran lengkap tentang kinerja dan penggunaan aplikasi Anda.
 
 
-Capture Dokumentasi :
+# Capture Documentation:
+
 ![image](https://github.com/roiskhoiron/mobile_analythics_projectile/assets/28525341/23aeb8cd-c363-43fc-a6fc-92b4f3afde86)
 
 
