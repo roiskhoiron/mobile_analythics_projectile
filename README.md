@@ -33,3 +33,12 @@ Bagus! Kamu telah membuat pemetaan file untuk analisis data dengan kategori yang
     - Fokus pada analisis perilaku pengguna, seperti alur penggunaan, preferensi, dan interaksi dalam aplikasi.
 
 Dengan memetakan analisa data berdasarkan kategori seperti ini, kamu bisa lebih mudah mengelola dan memahami data yang dikumpulkan, serta membuat keputusan berdasarkan analisis yang lebih terstruktur dan mendalam. Pastikan setiap file memiliki fungsi yang jelas dan terintegrasi dengan baik satu sama lain untuk mendapatkan gambaran lengkap tentang kinerja dan penggunaan aplikasi kamu.
+
+
+Capture Dokumentasi :
+
+<img width="1158" alt="image" src="https://github.com/roiskhoiron/mobile_analythics_projectile/assets/28525341/50248d50-3955-49db-9157-4b7b0e9d7fec">
+
+<img width="1170" alt="image" src="https://github.com/roiskhoiron/mobile_analythics_projectile/assets/28525341/6762592b-0ac3-4f0c-b6e0-a864b3930398">
+
+
