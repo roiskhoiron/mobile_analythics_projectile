@@ -29,7 +29,9 @@ taa.recordTrendChange('UserRegistration', 0.5);
 4. **FeatureUsageAnalytics** | Digunakan untuk menganalisis penggunaan fitur tertentu dalam aplikasi, membantu memahami fitur mana yang paling sering digunakan dan bagaimana pengguna berinteraksi dengan mereka.
 ```dart
 // Contoh penggunaan
-
+FeatureUsageAnalytics fua = FeatureUsageAnalytics();
+fua.recordFeatureUsage('DarkMode', true);
+fua.recordFeaturePreference('DarkMode', true);
 ```
 5. **MarketingRetentionAnalytics** | Fokus pada analisis retensi pengguna dan efektivitas kampanye pemasaran. Ini bisa mencakup pelacakan churn rate dan engagement pengguna.
 ```dart
