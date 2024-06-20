@@ -1,16 +1,1 @@
-# analythic_projectile
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+analyst monitor : https://analytics.google.com/analytics/web/?authuser=0&hl=en#/p446870659/realtime/overview?params=_u.dateOption%3Dtoday%26_u..nav%3Dmaui
