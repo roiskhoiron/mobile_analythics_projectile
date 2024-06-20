@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "941439367936",
+    "project_id": "projectile-analythics",
+    "storage_bucket": "projectile-analythics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941439367936:android:b2e2b0624a9eb378ec11e5",
+        "android_client_info": {
+          "package_name": "com.projectile.analythic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDIIvewFkfLZEQdGzS3vaNdv3xhmpss4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
