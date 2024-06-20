@@ -14,7 +14,7 @@ class SplashScreenUi extends StatelessWidget {
   Widget build(BuildContext context) {
 
     // splash screen with flutter logo and name aplication
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

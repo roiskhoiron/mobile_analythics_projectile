@@ -58,18 +58,13 @@ class AnalyticIO {
       // initialize firebase app
       await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-      // get package info and device info
-      var packageInfo = await PackageInfo.fromPlatform();
-      var diverInfo = await DeviceInfoPlugin().androidInfo;
+
 
       // set analytics collection enabled
       _analyticsService.setAnalyticsCollectionEnabled(enabled: true);
 
       // start to record app version, device type, device model, and device manufacture as analytic data
-      platform.recordAppVersion(packageInfo.version);
-      platform.recordDeviceType(diverInfo.device);
-      platform.recordDeviceModel(diverInfo.model);
-      platform.recordDeviceManufacture(diverInfo.manufacturer);
+
     } catch (e) {
       print('error initilizeApp $e');
     }
