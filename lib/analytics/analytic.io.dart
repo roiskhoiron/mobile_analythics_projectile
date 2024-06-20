@@ -58,12 +58,8 @@ class AnalyticIO {
       // initialize firebase app
       await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-
-
       // set analytics collection enabled
       _analyticsService.setAnalyticsCollectionEnabled(enabled: true);
-
-      // start to record app version, device type, device model, and device manufacture as analytic data
 
     } catch (e) {
       print('error initilizeApp $e');
