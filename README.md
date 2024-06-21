@@ -76,6 +76,28 @@ uba.recordUserPreference('DarkMode', true);
 ```
 Dengan memetakan analisa data berdasarkan kategori seperti ini, Anda bisa lebih mudah mengelola dan memahami data yang dikumpulkan, serta membuat keputusan berdasarkan analisis yang lebih terstruktur dan mendalam. Pastikan setiap file memiliki fungsi yang jelas dan terintegrasi dengan baik satu sama lain untuk mendapatkan gambaran lengkap tentang kinerja dan penggunaan aplikasi Anda.
 
+# Additional Utils
+### Object Tracker Recorder
+
+`ObjectTrackerRecorder` adalah kelas yang digunakan untuk merekam durasi suatu aktivitas. Kelas ini menyediakan metode `start()` untuk memulai pencatatan waktu dan `stop()` untuk menghentikan pencatatan waktu. Durasi total aktivitas dihitung saat metode `stop()` dipanggil.
+
+### Penggunaan
+
+Berikut adalah contoh penggunaan `ObjectTrackerRecorder` pada  `UserBehaviorAnalytics` untuk merekam durasi aktivitas pengguna tertentu seperti 'App Start' atau 'Login':
+
+```dart
+// Membuat instance UserBehaviorAnalytics
+UserBehaviorAnalytics uba = UserBehaviorAnalytics();
+
+// Memulai pencatatan waktu untuk aktivitas 'App Start'
+uba.recordUserActivity('App Start').start();
+
+// Lakukan aktivitas yang ingin dicatat waktunya
+await Future<void>.delayed(const Duration(seconds: 2));
+
+// Setelah beberapa waktu, menghentikan pencatatan waktu
+uba.recordUserActivity('App Start').stop();
+```
 
 # Capture Documentation:
 
