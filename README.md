@@ -99,8 +99,8 @@ await Future<void>.delayed(const Duration(seconds: 2));
 uba.recordUserActivity('App Start').stop();
 ```
 
+Terdapat penyesuaian ulang penulisan code user_behavior_analytics.dart pada fungsi `recordUserActivity`
 ```dart
-// penyesuaian pada file user_behavior_analytics.dart
 ObjectTrackerRecorder recordUserActivity(String activityName) {
     if (!_activityTrackers.containsKey(activityName)) {
       _activityTrackers[activityName] = ObjectTrackerRecorder(activityName)
@@ -120,7 +120,7 @@ ObjectTrackerRecorder recordUserActivity(String activityName) {
 
     return _activityTrackers[activityName]!;
   }
-```'
+```
 
 # Capture Documentation:
 
