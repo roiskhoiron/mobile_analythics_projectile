@@ -1,5 +1,7 @@
 Analyst monitor : https://analytics.google.com/analytics/web/?authuser=0&hl=en#/p446870659/realtime/overview?params=_u.dateOption%3Dtoday%26_u..nav%3Dmaui
 
+event report document : https://docs.google.com/spreadsheets/d/1C0Qe9JLLGmCtkQ7Do0qKdZktviqPGvG42Q0gUDNvArI/edit?usp=sharing
+
 # Dokumentasi Analitik Aplikasi
 
 Proyek ini mencakup berbagai kelas analitik yang dirancang untuk melacak dan menganalisis berbagai aspek performa dan penggunaan aplikasi. Berikut adalah ringkasan singkat dari masing-masing kelas:
