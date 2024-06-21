@@ -99,6 +99,29 @@ await Future<void>.delayed(const Duration(seconds: 2));
 uba.recordUserActivity('App Start').stop();
 ```
 
+```dart
+// penyesuaian pada file user_behavior_analytics.dart
+ObjectTrackerRecorder recordUserActivity(String activityName) {
+    if (!_activityTrackers.containsKey(activityName)) {
+      _activityTrackers[activityName] = ObjectTrackerRecorder(activityName)
+        ..onStop((int duration) {
+          analysis.logEvent(
+            name: 'user_activity',
+            parameters: {
+              'activity': activityName,
+              'duration': duration,
+            },
+          );
+
+          // Hapus tracker setelah selesai
+          _activityTrackers.remove(activityName);
+        });
+    }
+
+    return _activityTrackers[activityName]!;
+  }
+```'
+
 # Capture Documentation:
 
 ![image](https://github.com/roiskhoiron/mobile_analythics_projectile/assets/28525341/23aeb8cd-c363-43fc-a6fc-92b4f3afde86)
