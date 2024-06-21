@@ -27,26 +27,21 @@ class FirebaseAnalyticsService {
     print('ANALYTIC.IO [setUserProperties]: $name succeeded');
   }
 
-  Future<void> setScreenView({
-    required String screenName,
-  }) async {
-    await _analytics.logScreenView(screenName: screenName);
-    print('ANALYTIC.IO [setScreenView]: $screenName succeeded');
-  }
-
   Future<void> setCurrentScreen({
     required String screenName,
     required String screenClassOverride,
+    Map<String, Object>? parameters,
   }) async {
-    await _analytics.setCurrentScreen(
+    await _analytics.logScreenView(
       screenName: screenName,
-      screenClassOverride: screenClassOverride,
+      screenClass: screenClassOverride,
+      parameters: parameters,
     );
-    print('ANALYTIC.IO [setCurrentScreen]: $screenName succeeded');
+    print('ANALYTIC.IO [setCurrentScreen]: $screenName succeeded ${parameters == null ? '' : 'with parameters: $parameters'}');
   }
 
   Future<void> setUserId({
-    String? id,
+    String? id
   }) async {
     await _analytics.setUserId(id: id);
     print('ANALYTIC.IO [setUserId]: $id succeeded');

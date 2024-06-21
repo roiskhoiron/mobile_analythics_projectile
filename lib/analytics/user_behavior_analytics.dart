@@ -18,12 +18,12 @@ class UserBehaviorAnalytics {
   /// [screenName] adalah nama layar
   /// Contoh penggunaan:
   /// recordScreenNavigation('HomeScreen');
-  void recordScreenNavigation(String screenName) {
+  void recordScreenNavigation(String screenName, Map<String, Object>? parameters) {
     analysis.setCurrentScreen(
       screenName: screenName,
       screenClassOverride: screenName,
+      parameters: parameters,
     );
-    analysis.setScreenView(screenName: screenName);
   }
 
   ObjectTrackerRecorder recordUserActivity(String activityName) {
