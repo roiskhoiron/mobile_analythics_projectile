@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       routingCallback: (routing) {
         print('routingCallback ${routing?.current}');
         if (routing == null) return;
-        AnalyticIO.userBehavior.recordScreenNavigation(routing.current);
+        AnalyticIO.userBehavior.recordScreenNavigation(routing.current, {'isBack': routing.isBack ?? false});
       },
       getPages: [
         GetPage(name: '/', page: () => SplashScreenUi(),  binding: SplashScreenBinding()),
