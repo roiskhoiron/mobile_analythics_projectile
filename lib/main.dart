@@ -11,6 +11,10 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AnalyticIO.initializeApp();
 
+  AnalyticIO.userBehavior.recordUserActivity('App Start').start();
+  await Future<void>.delayed(const Duration(seconds: 2));
+  AnalyticIO.userBehavior.recordUserActivity('App Start').stop();
+
   runApp(const MyApp());
 }
 

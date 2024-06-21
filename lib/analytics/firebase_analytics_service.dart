@@ -13,7 +13,7 @@ class FirebaseAnalyticsService {
       name: name,
       parameters: parameters,
     );
-    print('ANALYTIC.IO [logEvent]: $name succeeded');
+    print('ANALYTIC.IO [logEvent]: $name succeeded ${parameters == null ? '' : 'with parameters: $parameters'}');
   }
 
   Future<void> setUserProperties({

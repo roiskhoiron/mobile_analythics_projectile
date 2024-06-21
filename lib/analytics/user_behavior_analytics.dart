@@ -1,4 +1,5 @@
 import 'firebase_analytics_service.dart';
+import 'object_tracker_recorder.dart';
 
 /// Class untuk mengelola analitik perilaku pengguna
 /// seperti merekam navigasi layar @[recordScreenNavigation],
@@ -10,6 +11,8 @@ import 'firebase_analytics_service.dart';
 /// recordUserInteraction('ButtonPress', 5);
 class UserBehaviorAnalytics {
   final analysis = FirebaseAnalyticsService();
+
+  final Map<String, ObjectTrackerRecorder> _activityTrackers = {};
 
   /// Catat navigasi layar
   /// [screenName] adalah nama layar
@@ -23,19 +26,24 @@ class UserBehaviorAnalytics {
     analysis.setScreenView(screenName: screenName);
   }
 
-  /// Catat aktivitas pengguna
-  /// [activityName] adalah nama aktivitas
-  /// [duration] adalah durasi aktivitas dalam detik
-  /// Contoh penggunaan:
-  /// recordUserActivity('PlayingGame', 120);
-  void recordUserActivity(String activityName, int duration) {
-    analysis.logEvent(
-      name: 'user_activity',
-      parameters: {
-        'activity': activityName,
-        'duration': duration,
-      },
-    );
+  ObjectTrackerRecorder recordUserActivity(String activityName) {
+    if (!_activityTrackers.containsKey(activityName)) {
+      _activityTrackers[activityName] = ObjectTrackerRecorder(activityName)
+        ..onStop((int duration) {
+          analysis.logEvent(
+            name: 'user_activity',
+            parameters: {
+              'activity': activityName,
+              'duration': duration,
+            },
+          );
+
+          // Hapus tracker setelah selesai
+          _activityTrackers.remove(activityName);
+        });
+    }
+
+    return _activityTrackers[activityName]!;
   }
 
   /// Catat interaksi pengguna
