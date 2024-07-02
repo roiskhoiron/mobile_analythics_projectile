@@ -1,7 +1,7 @@
-import 'firebase_analytics_service.dart';
+import 'analytics_engine_service.dart';
 
 class PlatformAnalytics {
-  final analysis = FirebaseAnalyticsService();
+  final analysis = AnalyticsEngineService();
 
   /// Record app version
   /// [appVersion] adalah versi aplikasi

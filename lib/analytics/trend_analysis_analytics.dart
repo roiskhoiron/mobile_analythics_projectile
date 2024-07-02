@@ -1,4 +1,4 @@
-import 'firebase_analytics_service.dart';
+import 'analytics_engine_service.dart';
 
 /// Class untuk mengelola analitik tren
 /// seperti merekam event tren @[recordTrendEvent],
@@ -7,7 +7,7 @@ import 'firebase_analytics_service.dart';
 /// recordTrendEvent('UserRegistration', 1);
 /// recordTrendChange('UserRegistration', 0.5);
 class TrendAnalysisAnalytics {
-  final analysis = FirebaseAnalyticsService();
+  final analysis = AnalyticsEngineService();
 
   /// Catat event tren
   /// [eventName] adalah nama event

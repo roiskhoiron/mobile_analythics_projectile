@@ -1,4 +1,4 @@
-import 'firebase_analytics_service.dart';
+import 'analytics_engine_service.dart';
 
 /// Class untuk mengelola analitik pengguna
 /// seperti merekam informasi pengguna @[recordUserInformation],
@@ -9,7 +9,7 @@ import 'firebase_analytics_service.dart';
 /// updateUser(email: '', userID: '', username: '');
 /// recordUserSession(3600);
 class UserAnalytics {
-  final analysis = FirebaseAnalyticsService();
+  final analysis = AnalyticsEngineService();
   
 
   /// @[defaultValue] is data that will be sent to analytic if the user out of login

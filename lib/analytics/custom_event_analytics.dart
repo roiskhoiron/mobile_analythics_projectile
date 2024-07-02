@@ -1,11 +1,11 @@
-import 'firebase_analytics_service.dart';
+import 'analytics_engine_service.dart';
 
 /// Class to manage custom event analytics
 /// such as recording user registration @[recordCustomEvent]
 /// Example of usage:
 /// recordCustomEvent('UserRegistration', {'value': 1});
 class CustomEventAnalytics {
-  final analysis = FirebaseAnalyticsService();
+  final analysis = AnalyticsEngineService();
 
 
   /// Record custom event

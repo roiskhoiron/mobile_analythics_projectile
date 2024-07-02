@@ -1,4 +1,4 @@
-import 'firebase_analytics_service.dart';
+import 'analytics_engine_service.dart';
 import 'object_tracker_recorder.dart';
 
 /// Class untuk mengelola analitik perilaku pengguna
@@ -10,7 +10,7 @@ import 'object_tracker_recorder.dart';
 /// recordUserActivity('PlayingGame', 120);
 /// recordUserInteraction('ButtonPress', 5);
 class UserBehaviorAnalytics {
-  final analysis = FirebaseAnalyticsService();
+  final analysis = AnalyticsEngineService();
 
   final Map<String, ObjectTrackerRecorder> _activityTrackers = {};
 

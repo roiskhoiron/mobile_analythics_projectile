@@ -1,6 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 
-class FirebaseAnalyticsService {
+class AnalyticsEngineService {
   static final FirebaseAnalytics _analytics = FirebaseAnalytics.instance;
 
   static FirebaseAnalytics get instance => _analytics;

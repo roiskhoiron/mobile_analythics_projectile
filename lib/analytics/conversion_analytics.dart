@@ -1,4 +1,4 @@
-import 'firebase_analytics_service.dart';
+import 'analytics_engine_service.dart';
 
 /// Class untuk mengelola analitik konversi
 /// seperti merekam event konversi @[recordConversionEvent],
@@ -7,7 +7,7 @@ import 'firebase_analytics_service.dart';
 /// recordConversionEvent('Purchase', 1);
 /// recordConversionRate(0.5);
 class ConversionAnalytics {
-  final analysis = FirebaseAnalyticsService();
+  final analysis = AnalyticsEngineService();
 
   /// Catat event konversi
   /// [eventName] adalah nama event

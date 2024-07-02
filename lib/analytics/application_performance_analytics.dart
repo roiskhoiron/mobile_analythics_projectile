@@ -1,4 +1,4 @@
-import 'firebase_analytics_service.dart';
+import 'analytics_engine_service.dart';
 
 /// Class untuk mengelola analitik performa aplikasi
 /// seperti merekam waktu respons API @[recordResponseTime],
@@ -9,7 +9,7 @@ import 'firebase_analytics_service.dart';
 /// recordApplicationError('NullPointerError');
 /// recordPerformance(name: 'loadTime', datas: {'time': 200});
 class ApplicationPerformanceAnalytics {
-  final analysis = FirebaseAnalyticsService();
+  final analysis = AnalyticsEngineService();
 
   /// Catat waktu respons
   /// [apiEndpoint] adalah endpoint API yang dipanggil

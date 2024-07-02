@@ -9,7 +9,7 @@ import 'application_performance_analytics.dart';
 import 'conversion_analytics.dart';
 import 'custom_event_analytics.dart';
 import 'feature_usage_analytics.dart';
-import 'firebase_analytics_service.dart';
+import 'analytics_engine_service.dart';
 import 'marketing_retention_analytics.dart';
 import 'platform_analytics.dart';
 import 'trend_analysis_analytics.dart';
@@ -22,10 +22,10 @@ import 'user_behavior_analytics.dart';
 class AnalyticIO {
   static final AnalyticIO _instance = AnalyticIO._init();
 
-  static final FirebaseAnalyticsService _analyticsService = FirebaseAnalyticsService();
+  static final AnalyticsEngineService _analyticsService = AnalyticsEngineService();
 
   static var observers =
-      FirebaseAnalyticsObserver(analytics: FirebaseAnalyticsService.instance);
+      FirebaseAnalyticsObserver(analytics: AnalyticsEngineService.instance);
 
   static final RouteObserver<ModalRoute<void>> routeObserver =
   RouteObserver<ModalRoute<void>>();

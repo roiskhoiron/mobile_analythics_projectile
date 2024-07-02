@@ -1,4 +1,4 @@
-import 'firebase_analytics_service.dart';
+import 'analytics_engine_service.dart';
 
 /// Class untuk mengelola analitik retensi pemasaran
 /// seperti merekam sumber pengguna @[recordUserSource],
@@ -17,7 +17,7 @@ import 'firebase_analytics_service.dart';
 /// recordCampaignDuration('WinterSale', 3600);
 /// recordCampaignFrequency('WinterSale', 5);
 class MarketingRetentionAnalytics {
-  final analysis = FirebaseAnalyticsService();
+  final analysis = AnalyticsEngineService();
 
   /// Catat sumber pengguna
   /// [userSource] adalah sumber pengguna
